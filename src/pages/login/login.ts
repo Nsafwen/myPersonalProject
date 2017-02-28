@@ -3,7 +3,7 @@ import { NavController, AlertController, LoadingController, Loading } from 'ioni
 import { AuthService } from '../../providers/auth-service';
 import { RegisterPage } from '../register/register';
 import { HomePage } from '../home/home';
-
+import { TabsPage } from '../tabs/tabs';
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
@@ -24,7 +24,7 @@ export class LoginPage {
       if (allowed) {
         setTimeout(() => {
         this.loading.dismiss();
-        this.nav.setRoot(HomePage)
+        this.nav.setRoot(TabsPage)
         });
       } else {
         this.showError("Access Denied");
