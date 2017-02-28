@@ -59,7 +59,7 @@ $ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg
  ```
 Optimisation de l'apk:
 ```bash
-$ ./zipalign -v 4 android-release-unsigned.apk feve_v1.6.apk
+$ ./zipalign -v 4 android-release-unsigned.apk myApp_v1.6.apk
 ```
 ## Générer une version Debug  
 
@@ -86,5 +86,5 @@ $ cordova build --debug android
 ## Optimisation de l'apk:
 copier ..\sdk\build-tools\25.0.2\zipalign et coller dans le répertoire de votre projet
 ```bash
-$ zipalign -v 4 android-release-unsigned.apk feve_debug.apk
+$ zipalign -v 4 android-release-unsigned.apk myApp_debug.apk
 ```
