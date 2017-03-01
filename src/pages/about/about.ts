@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-
 import { NavController } from 'ionic-angular';
+import { AuthService } from '../../providers/auth-service';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-about',
@@ -8,8 +9,14 @@ import { NavController } from 'ionic-angular';
 })
 export class AboutPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(private nav: NavController, private auth: AuthService) {
 
+  }
+
+  public logout() {
+      this.auth.logout().subscribe(succ => {
+          this.nav.setRoot(LoginPage)
+      });
   }
 
 }
