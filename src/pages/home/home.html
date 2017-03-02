@@ -1,17 +1,47 @@
 <ion-header>
-  <ion-navbar color="dark">
-    <ion-title>
-      Member Area
-    </ion-title>
-    <ion-buttons end>
-      <button ion-button (click)="logout()">
-        <ion-icon name="log-out"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
+    <ion-navbar color="dark">
+        <button menuToggle ion-button icon-only>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Member Area {{username}}</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="logout()">
+                <ion-icon name="log-out"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+    <ion-toolbar>
+        <ion-searchbar placeholder="Search" [(ngModel)]="search"></ion-searchbar>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content class="home" padding>
-  <h3>Welcome inside, {{username}}!</h3>
-  Your Email is: {{email}}
+    <!--<ion-item>-->
+        <!--<ion-input type="search" placeholder="Search" [(ngModel)]="search"></ion-input>-->
+    <!--</ion-item>-->
+
+    <button ion-button full (click)="doSearch()">Search</button>
+
+    <ion-list>
+        <ion-item-group [hidden]="loading">
+            <ion-list-header default>
+                <ion-icon name="pizza"></ion-icon>
+                MomoPizza
+            </ion-list-header>
+            <a ion-item (click)="openPizza(pizza.id)" *ngFor="let pizza of pizzas | pizzaSearch:search">
+                <span item-left text-left>{{pizza.id}}</span>
+                <h2>{{pizza.name}}</h2>
+                <p>{{pizza.price | currency:'EUR'}}</p>
+                <!--<button item-right (click)="addToCart($event, pizza)" ion-button icon-only default>-->
+                    <!--<ion-icon name="cart"></ion-icon>-->
+                <!--</button>-->
+            </a>
+        </ion-item-group>
+    </ion-list>
+    <ion-slides [options]="mySlideOptions">
+        <ion-slide *ngFor="let slide of slides">
+            <img [src]="slide.MediaUrl">
+        </ion-slide>
+    </ion-slides>
+
 </ion-content>

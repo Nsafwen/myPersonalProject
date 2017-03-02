@@ -1,0 +1,21 @@
+[{
+  "id": 1,
+  "name": "Pizza Végétarienne",
+  "price": 5.99,
+  "description": "Pizza - sans viande, d'accord - mais il y a des gens qui aiment."
+}, {
+  "id": 2,
+  "name": "Pizza Salami",
+  "price": 10.99,
+  "description": "Salami, biologique et sans arômes artificiels"
+}, {
+  "id": 3,
+  "name": "Pizza Thon",
+  "price": 7.99,
+  "description": "Poissons Délicieux"
+}, {
+  "id": 4,
+  "name": "Pizza du jour",
+  "price": 0,
+  "description": "Pizza à la crème, suppléments gratuits"
+}]

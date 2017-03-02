@@ -8,6 +8,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { AuthService } from '../providers/auth-service';
 import { RegisterPage } from '../pages/register/register';
+import { ImageSearch } from '../providers/image-search';
+import { PizzaService } from '../providers/pizza-service';
+import { DetailPage } from '../pages/detail/detail';
+import { PizzaSearchPipe } from '../pipes/pizza-search';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,9 @@ import { RegisterPage } from '../pages/register/register';
     HomePage,
     TabsPage,
 	LoginPage,
-    RegisterPage
+    RegisterPage,
+    DetailPage,
+    PizzaSearchPipe
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -30,8 +36,9 @@ import { RegisterPage } from '../pages/register/register';
     HomePage,
     TabsPage,
 	LoginPage,
-    RegisterPage
+    RegisterPage,
+    DetailPage
   ],
-  providers: [AuthService,{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [AuthService, ImageSearch, PizzaService, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}
